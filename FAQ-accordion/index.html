@@ -103,16 +103,28 @@
 
       faqQuestions.forEach((item) => {
         const question = item.querySelector(".question");
-        const answere = item.querySelector("p");
+        const answer = item.querySelector("p");
         const img = item.querySelector("img");
 
         question.addEventListener("click", () => {
-          faqQuestions.forEach((item) => {
-            item.querySelector("p").style.display = "none";
-            item.querySelector("img").src = "./assets/images/icon-plus.svg";
+          // Close all other answers
+          faqQuestions.forEach((otherItem) => {
+            const otherAnswer = otherItem.querySelector("p");
+            const otherImg = otherItem.querySelector("img");
+            if (otherAnswer !== answer) {
+              otherAnswer.style.display = "none";
+              otherImg.src = "./assets/images/icon-plus.svg";
+            }
           });
-          answere.style.display = "block";
-          img.src = "./assets/images/icon-minus.svg";
+
+          // Toggle the clicked answer
+          if (answer.style.display === "block") {
+            answer.style.display = "none";
+            img.src = "./assets/images/icon-plus.svg";
+          } else {
+            answer.style.display = "block";
+            img.src = "./assets/images/icon-minus.svg";
+          }
         });
       });
     </script>

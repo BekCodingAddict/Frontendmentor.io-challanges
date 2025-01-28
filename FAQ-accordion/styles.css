@@ -86,10 +86,15 @@ li h3 {
   margin-top: 1rem;
 }
 
+li h3:hover {
+  color: hsl(300, 100%, 70%);
+}
+
 li p {
   display: none;
   color: hsl(292, 16%, 49%);
 }
+
 @media screen and (max-width: 1024px) {
   .faq-container {
     padding: 2rem 2rem;
@@ -98,6 +103,12 @@ li p {
   }
   .faq-container .title {
     font-size: 1rem;
+  }
+  li h3 {
+    font-size: 1rem;
+  }
+  li p {
+    font-size: 0.9rem;
   }
 }
 
