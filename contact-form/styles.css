@@ -13,27 +13,40 @@
 body {
   background: hsl(148, 38%, 91%);
   height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* FORM CONTAINER*/
 .container {
   display: flex;
   flex-direction: column;
   background: hsl(0, 0%, 100%);
-  width: 45rem;
-  height: 56 rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 50rem;
   border-radius: 1.2rem;
   padding: 3rem;
   font-size: 16px;
+  transition: width 0.5s ease-in-out;
 }
 
 .container h1 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  color: hsl(187, 24%, 22%);
 }
 
 form {
@@ -47,25 +60,15 @@ form .double-input {
   gap: 1rem;
 }
 
+.query-type-box {
+  font-size: 16px;
+}
+
 .double-radio-input {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-form .radio-box {
-  display: flex;
-  gap: 1rem;
-  padding: 0.8rem;
-  border: 1px solid hsl(187, 24%, 22%);
-  border-radius: 0.4rem;
-  width: 100%;
-}
-
-form .radio-box input[type="radio"] {
-  transform: scale(1.2); /* Increases the size by 1.5 times */
-  cursor: pointer;
 }
 
 .input-box {
@@ -89,6 +92,21 @@ form .radio-box input[type="radio"] {
   padding: 1rem;
   font-size: 1rem;
 }
+
+form .radio-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid hsl(187, 24%, 22%);
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+form .radio-box input[type="radio"] {
+  transform: scale(1.2); /* Increases the size by 1.5 times */
+  cursor: pointer;
+}
+
 .checkbox-input {
   display: flex;
 
@@ -139,22 +157,150 @@ textarea:focus {
   color: hsl(0, 66%, 54%);
 }
 
-.input-box input:invalid,
-.input-box textarea:invalid {
+.hide-error {
+  display: none;
+  color: hsl(0, 66%, 54%);
+}
+.show-error {
+  display: none;
+  color: hsl(0, 66%, 54%);
+}
+
+/* FORM VALIDATION LOGIC */
+.input-box input:focus:invalid,
+.input-box textarea:focus:invalid {
   border: 1px solid hsl(0, 66%, 54%);
 }
 
-.input-box input:not(:focus):invalid ~ .input-error {
+.input-box input:focus:invalid ~ .input-error {
   display: block;
 }
 
-.input-box textarea:not(:focus):invalid ~ .input-error {
+.input-box textarea:focus:invalid ~ .input-error {
+  display: block;
+}
+
+.query-type-box:has(input[type="radio"]:focus:invalid) .input-error {
   display: block;
 }
 
 .checkbox-input
   .checkbox-box
-  input[type="checkbox"]:not(:checked):invalid
+  input[type="checkbox"]:not(:checked):focus:invalid
   ~ .input-error {
   display: block;
+}
+
+/* NOTIFICATION */
+.notification {
+  position: absolute;
+  top: -10rem; /* Hidden initially */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36rem;
+  height: 8rem;
+  background-color: hsl(187, 24%, 22%);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  color: hsl(0, 0%, 100%);
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.notification.show {
+  top: 2rem;
+  opacity: 1;
+}
+
+.notification h1 img {
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+
+.notification p {
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+@keyframes popup {
+  from {
+    top: -10rem;
+  }
+  to {
+    bottom: 2rem;
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 2rem;
+    margin-top: 8rem;
+  }
+
+  .double-input {
+    flex-direction: column;
+  }
+
+  .double-radio-input {
+    flex-direction: column;
+  }
+
+  .input-box input {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  form .radio-box {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+  .attribution {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .notification {
+    width: 28rem;
+    height: 8rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 2rem;
+    margin-top: 14rem;
+  }
+
+  .notification {
+    width: 22rem;
+    height: 8rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 2rem;
+    margin-top: 28rem;
+  }
+
+  .notification {
+    width: 22rem;
+    height: 8rem;
+  }
 }
