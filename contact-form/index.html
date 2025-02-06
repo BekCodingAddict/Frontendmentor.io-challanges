@@ -1,16 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + React</title>
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Contact form</title>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Contact Us</h1>
+      <form>
+        <div class="double-input">
+          <div class="input-box">
+            <label for="frist-name">First Name *</label>
+            <input type="text" name="frist-name" required />
+            <p class="input-error">First Name This field is required</p>
+          </div>
 
+          <div class="input-box">
+            <label for="last-name">Last Name *</label>
+            <input type="text" name="last-name" required />
+            <p class="input-error">Last Name This field is required</p>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label for="email">Email Address *</label>
+          <input type="email" name="email" required />
+          <p class="input-error">Please enter a valid email address</p>
+        </div>
+
+        <div>
+          <label for="query-type">Query Type *</label>
+          <div class="double-radio-input">
+            <div class="radio-box">
+              <input
+                type="radio"
+                name="query-type"
+                id="general-enquiry"
+                required
+              />
+              <p>General Enquiry</p>
+            </div>
+            <div class="radio-box">
+              <input
+                type="radio"
+                name="query-type"
+                id="support-request"
+                required
+              />
+              <p>Support Request</p>
+            </div>
+          </div>
+          <p id="input-error" style="color: hsl(0, 66%, 54%)">
+            Request Please select a query type
+          </p>
+        </div>
+
+        <div class="input-box">
+          <label for="message">Message *</label>
+          <textarea name="message" rows="4" required></textarea>
+          <p class="input-error">This field is required</p>
+        </div>
+
+        <div class="checkbox-input">
+          <div class="checkbox-box">
+            <input type="checkbox" id="consentCheckbox" required />
+            <p>I consent to being contacted by the team *</p>
+            <p class="input-error">
+              To submit this form, please consent to being contacted
+            </p>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <button class="btn">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    Submit Message Sent! Thanks for completing the form. We'll be in touch soon!
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="./app.js"></script>
+  </body>
 </html>
