@@ -1,7 +1,15 @@
 # Frontend Mentor - FAQ accordion
+
 ### Welcome! 👋
-FAQ accordion
+>
+>I've just completed a front-end coding challenge from @frontendmentor! 🎉\
+>You can see my solution here: https://www.frontendmentor.io/solutions/htmlcsscss-flexboxjavascript-UAyYu_DC6T
+>Any suggestions on how I can improve are welcome!
+
+### FAQ accordion
 In this challenge, you'll build an FAQ accordion. This is an extremely common front-end pattern, so it's an excellent opportunity to get some practice in!
+
+
 
 - [LIVE PREVIEW](https://bekcodingaddict.github.io/Frontendmentor.io-challanges/FAQ-accordion/)
 
