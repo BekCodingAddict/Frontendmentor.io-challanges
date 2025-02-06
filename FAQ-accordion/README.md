@@ -1,12 +1,11 @@
 # Frontend Mentor - FAQ accordion
 
 ### Welcome! 👋
->
->I've just completed a front-end coding challenge from @frontendmentor! 🎉\
->You can see my solution here: https://www.frontendmentor.io/solutions/htmlcsscss-flexboxjavascript-UAyYu_DC6T
->Any suggestions on how I can improve are welcome!
+I've just completed a front-end coding challenge from @frontendmentor! 🎉\
+You can see my solution here: https://www.frontendmentor.io/solutions/htmlcsscss-flexboxjavascript-UAyYu_DC6T
+Any suggestions on how I can improve are welcome!
 
-### FAQ accordion
+### About the Challange FAQ accordion
 In this challenge, you'll build an FAQ accordion. This is an extremely common front-end pattern, so it's an excellent opportunity to get some practice in!
 
 
@@ -36,4 +35,15 @@ Download the starter code and go through the README.md file. This will provide f
 
 Want some support on the challenge? Join our community and ask questions in the help channel.
 
+## Solution retrospective
+### What are you most proud of, and what would you do differently next time?
+I'm proud of how I built the FAQ Accordion using only HTML, CSS (Flexbox), and JavaScript, keeping the code clean and simple. I also focused on making the design fully responsive without relying on frameworks.
+
+### What challenges did you encounter, and how did you overcome them?
+ne challenge I faced was making sure that when a user clicks on a question, the previously opened answer closes automatically. Initially, all answers remained open when clicked, which affected the user experience.
+
+To solve this, I used JavaScript to track the currently active question. I added an event listener to each question and closed any previously opened answers before opening the new one. This way, only one answer stays open at a time, creating a cleaner and more user-friendly interaction.
+
+### What specific areas of your project would you like help with?
+I would love feedback on the overall responsiveness and whether the FAQ accordion feels smooth and intuitive.
 
